@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <input type="password" id="text" placeholder="Enter your password">
+            <img src="arrow.png" alt="">
+        </div>
+        <div class="text">
+            <h3>Password is Weak</h3>
+        </div>
+    </div>
+
+    <script>
+    text.addEventListener('input',function my()
+    {
+        var v = document.getElementById("text").value;
+        if (v.length >= 12){
+            var c = document.querySelector(".content");
+            c.style.border = "3px solid green";
+            var t = document.querySelector(".text");
+            t.style.marginTop = "10px";
+            t.style.paddingLeft = "5px";
+            t.style.visibility = "visible";
+            t.innerHTML = "Password is Strong";
+        }
+        else if (v.length >= 8) {
+            var c = document.querySelector(".content");
+            c.style.border = "3px solid yellow";
+            var t = document.querySelector(".text");
+            t.style.marginTop = "10px";
+            t.style.paddingLeft = "5px";
+            t.style.visibility = "visible";
+            t.innerHTML = "Password is Medium";
+        }
+        else if (v.length >= 1)
+        {
+            var c = document.querySelector(".content");
+            c.style.border = "3px solid red";
+            var t = document.querySelector(".text");
+            t.style.marginTop = "10px";
+            t.style.paddingLeft = "5px";
+            t.style.visibility = "visible";
+            t.innerHTML = "Password is weak";
+        }
+        else
+        {
+            var c = document.querySelector(".content");
+            c.style.border = "0px solid #252525";
+            var t = document.querySelector(".text");
+            t.style.visibility = "hidden";
+        }
+        
+    });
+    </script>
+</body>
+
+</html>
